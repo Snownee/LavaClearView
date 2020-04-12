@@ -1,0 +1,9 @@
+modLoader="javafml"
+loaderVersion="[31,)"
+[[mods]]
+modId="clearview"
+version="${file.jarVersion}"
+displayName="Lava Clear View"
+authors="Snownee"
+displayURL="https://minecraft.curseforge.com/projects/lava-clear-view"
+description="Allow you to see more easily under lava, when you have fire resistance."
