@@ -28,9 +28,7 @@ public final class ClearView {
         if (player.isCreative()) {
             event.setDensity(0f);
             event.setCanceled(true);
-            return;
-        }
-        if (canApply(player)) {
+        } else if (canApply(player)) {
             event.setDensity(0.03f);
             event.setCanceled(true);
         }
@@ -44,9 +42,7 @@ public final class ClearView {
         }
         if (event.getPlayer().isCreative()) {
             event.setCanceled(true);
-            return;
-        }
-        if (canApply(event.getPlayer())) {
+        } else if (canApply(event.getPlayer())) {
             event.getMatrixStack().translate(0, -0.25, 0);
         }
     }
