@@ -25,7 +25,7 @@ public final class ClearView {
         if (player == null) {
             return;
         }
-        if (player.isCreative()) {
+        if (player.isCreative() || player.isSpectator()) {
             event.setDensity(0f);
             event.setCanceled(true);
         } else if (canApply(player)) {
