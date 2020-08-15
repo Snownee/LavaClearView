@@ -15,7 +15,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 
 @Mod("clearview")
-@EventBusSubscriber
+@EventBusSubscriber(Dist.CLIENT)
 public final class ClearView {
 
     @SubscribeEvent
