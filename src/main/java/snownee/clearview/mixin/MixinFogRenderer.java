@@ -12,19 +12,19 @@ import net.minecraft.world.entity.player.Player;
 @Mixin(FogRenderer.class)
 public class MixinFogRenderer {
 
-    @Redirect(
-            method = "setupFog", at = @At(
-                    value = "INVOKE", target = "Lnet/minecraft/world/entity/Entity;isSpectator()Z", ordinal = 0
-            )
-    )
-    private static boolean clearview$setupFog(Entity entity) {
-        if (entity instanceof Player) {
-            Player player = (Player) entity;
-            if (player.isCreative() || player.hasEffect(MobEffects.FIRE_RESISTANCE)) {
-                return true;
-            }
-        }
-        return entity.isSpectator();
-    }
+	@Redirect(
+			method = "setupFog(Lnet/minecraft/client/Camera;Lnet/minecraft/client/renderer/FogRenderer$FogMode;FZF)V", at = @At(
+					value = "INVOKE", target = "Lnet/minecraft/world/entity/Entity;isSpectator()Z", ordinal = 0
+			), remap = false
+	)
+	private static boolean clearview$setupFog(Entity entity) {
+		if (entity instanceof Player) {
+			Player player = (Player) entity;
+			if (player.isCreative() || player.hasEffect(MobEffects.FIRE_RESISTANCE)) {
+				return true;
+			}
+		}
+		return entity.isSpectator();
+	}
 
 }
