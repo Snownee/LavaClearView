@@ -20,7 +20,7 @@ public class MixinFogRenderer {
 	private static boolean clearview$setupFog(Entity entity) {
 		if (entity instanceof Player) {
 			Player player = (Player) entity;
-			if (player.isCreative() || player.hasEffect(MobEffects.FIRE_RESISTANCE)) {
+			if (player.isCreative() || player.fireImmune() || player.hasEffect(MobEffects.FIRE_RESISTANCE)) {
 				return true;
 			}
 		}
