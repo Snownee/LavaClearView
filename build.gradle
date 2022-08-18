@@ -187,7 +187,7 @@ dependencies {
     implementation fg.deobf("curse.maven:jei-238222:3905244")
     implementation fg.deobf("curse.maven:jade-324717:3903693")
     implementation fg.deobf("curse.maven:kiwi-303657:3908296")
-    annotationProcessor "curse.maven:kiwi-303657:3908296"
+    //annotationProcessor "curse.maven:kiwi-303657:3908296"
 }
 
 processResources {

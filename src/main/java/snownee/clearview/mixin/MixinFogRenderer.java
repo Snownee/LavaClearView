@@ -14,8 +14,8 @@ public class MixinFogRenderer {
 
 	@Redirect(
 			method = "setupFog(Lnet/minecraft/client/Camera;Lnet/minecraft/client/renderer/FogRenderer$FogMode;FZF)V", at = @At(
-					value = "INVOKE", target = "Lnet/minecraft/world/entity/Entity;isSpectator()Z", ordinal = 0, remap = true
-			), remap = false
+					value = "INVOKE", target = "Lnet/minecraft/world/entity/Entity;isSpectator()Z", ordinal = 0
+			)
 	)
 	private static boolean clearview$setupFog(Entity entity) {
 		if (entity instanceof Player) {
