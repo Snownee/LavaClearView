@@ -58,6 +58,12 @@ java {
 	// withSourcesJar()
 }
 
+loom {
+    mixin {
+        defaultRefmapName = "clearview.refmap.json"
+    }
+}
+
 jar {
 	from("LICENSE") {
 		rename { "${it}_${project.archivesBaseName}"}
